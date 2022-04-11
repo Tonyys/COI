@@ -238,19 +238,71 @@
                             <div class="dropdown-js">
                                 <div class="dropdown-js__current" data-value="unset">
                                     <span>Оберіть пункт</span>
+                                    <div class="dropdown-js__arrow">
+                                        <svg width="17" height="9" viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.63097 8.5L0.290277 0.853569L16.9717 0.853569L8.63097 8.5Z" fill="#484848"/>
+                                        </svg>
+
+                                    </div>
                                 </div>
                                 <div class="dropdown-js__list">
-                                    <a href="#" data-value="Львів">Львів</a>
-                                    <a href="#" data-value="Херсон">Херсон</a>
-                                    <a href="#" data-value="Хмельницький">Хмельницький</a>
+                                    <a class="dropdown-js__link" href="#" data-value="Пунк 1">Пунк 1</a>
+                                    <a class="dropdown-js__link" href="#" data-value="Пунк 2">Пунк 2</a>
+                                    <a class="dropdown-js__link" href="#" data-value="Пунк 3">Пунк 3</a>
+                                    <a class="dropdown-js__link" href="#" data-value="Пунк 4">Пунк 4</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form__item">
-                            <input class="form__input-checkbox" type="checkbox" id="">
-                            <label for="" class="form__checkbox-label"></label>
-                            <input class="form__input-checkbox" type="checkbox">
-                            <input class="form__input-checkbox" type="checkbox">
+                            <div class="form__item-row">
+                                <label class="checkbox">
+                                    <span class="checkbox__name">Checkbox 1</span>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark">
+                                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0.666626 8.07091L6.31369 12.2121L11.3333 1.16895" stroke="#F7F6F4"/>
+    </svg>
+                                    </span>
+                                </label>
+                                <label class="checkbox">
+                                    <span class="checkbox__name">Checkbox 2</span>
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0.666626 8.07091L6.31369 12.2121L11.3333 1.16895" stroke="#F7F6F4"/>
+    </svg>
+                                    </span>
+                                </label>
+                                <label class="checkbox">
+                                    <span class="checkbox__name">Checkbox 3</span>
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0.666626 8.07091L6.31369 12.2121L11.3333 1.16895" stroke="#F7F6F4"/>
+    </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-row">
+                                <label class="container">One
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Two
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Three
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Four
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
                         </div>
                     </form>
                 </div>
