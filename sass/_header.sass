@@ -5,6 +5,20 @@
   left: 0
   right: 0
   z-index: 100
+  transition-duration: .4s
+  &.active
+    background-color: #ffffff
+    -webkit-box-shadow: 0px 14px 50px -15px rgba(0,0,0,0.55)
+    box-shadow: 0px 14px 50px -15px rgba(0,0,0,0.55)
+    .header__img
+      path
+        fill: #000000
+      rect
+        fill: #000000
+    .header__link
+      color: $black
+      &:after
+        background-color: $pink-light
   &__inner
     display: flex
     justify-content: space-between
@@ -15,6 +29,10 @@
   &__img
     width: 100%
     height: 100%
+    path
+      transition-duration: .4s
+    rect
+      transition-duration: .4s
   &__nav
     margin: 0 auto
     display: flex
@@ -23,6 +41,8 @@
     font-size: 20px
     font-weight: 500
     position: relative
+    transition-duration: .4s
+    color: $white
     &:after
       content: ''
       width: 100%
@@ -39,3 +59,5 @@
     &:hover
       &:after
         transform: scaleX(1)
+    &.active
+      color: $pink-light !important

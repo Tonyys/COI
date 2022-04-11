@@ -1,3 +1,18 @@
+//HEADER Scroll
+const intro = document.querySelector('.intro')
+const header = document.querySelector('.header')
+
+	window.addEventListener('scroll',function (){
+		if(window.scrollY >= intro.scrollHeight - 80){
+			header.classList.add('active')
+			} else {
+			header.classList.remove('active')
+		}
+	})
+
+
+//select-Dropdown
+
 const dropdowns = document.querySelectorAll('.dropdown-js');
 if(dropdowns) {
 	// dropdown func
@@ -56,3 +71,46 @@ const swiperBg = new Swiper('.intro__bg', {
 });
 
 swiperItr.controller.control = swiperBg
+
+//Smooth scroll
+
+const btnScroll = document.querySelectorAll('.header__link');
+
+btnScroll.forEach(function (item) {
+	let currentItem = item
+	let itemAttr = currentItem.getAttribute("data-scroll")
+	let currentSection = document.querySelector(itemAttr)
+
+	window.addEventListener('scroll',function (){
+		currentItem.classList.remove('active')
+
+		if(window.scrollY >= currentSection.offsetTop - 70){
+			btnScroll.forEach(function (item){
+				item.classList.remove('active')
+			})
+			currentItem.classList.add('active')
+		} else {
+			currentItem.classList.remove('active')
+		}
+	})
+
+	item.addEventListener('click',function (e){
+		e.preventDefault()
+
+
+		btnScroll.forEach(function (item){
+			item.classList.remove('active')
+		})
+
+		currentItem.classList.add('active')
+		scrollTo(currentSection)
+	})
+})
+
+function scrollTo(element) {
+	window.scroll({
+		left: 0,
+		top: element.offsetTop - 50,
+		behavior: 'smooth'
+	})
+}
