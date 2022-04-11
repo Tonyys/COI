@@ -29,20 +29,22 @@
     border: 1px solid #000000
     border-radius: 4px
   &__cross
+    display: none
     width: 14px
     height: 14px
     position: absolute
     top: 19px
     right: 15px
   &__done
+    display: none
     width: 14px
     height: 14px
     position: absolute
     top: 19px
     right: 15px
   &__mess
-    margin-top: 10px
-    display: flex
+    margin-top: 5px
+    display: none
     align-items: center
   &__mess-icon
     margin-right: 6px
@@ -52,3 +54,51 @@
     font-size: 14px
     font-weight: 400
     color: $pink-light
+  &__comment
+    margin-bottom: 40px
+    padding: 17px 30px
+    font-size: 16px
+    font-weight: 400
+    border: 1px solid $black
+    border-radius: 4px
+    color: $black
+    outline: none
+    resize: none
+    &::placeholder
+      color: $black
+
+  //    JS VALIDATE
+
+  .name-js.is-invalid
+    .form__mess
+      display: flex
+    .form__cross
+      display: block
+  .name-js.is-valid
+    .form__done
+      display: block
+  .number-js.is-invalid
+    .form__mess
+      display: flex
+    .form__cross
+      display: block
+  .number-js.is-valid
+    .form__done
+      display: block
+  .email-js.is-invalid
+    .form__mess
+      display: flex
+    .form__cross
+      display: block
+  .email-js.is-valid
+    .form__done
+      display: block
+  .select-js.is-invalid
+    .form__mess
+      display: flex
+    .form__cross
+      display: block
+  .select-js.is-valid
+    .form__mess
+      display: none
+

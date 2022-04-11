@@ -183,9 +183,9 @@
                         </h3>
                     </div>
                     <form class="form" action="">
-                        <label class="form__item">
+                        <div class="form__item name-js">
                             <span class="form__item-name">Ім’я *</span>
-                            <input class="form__input" type="text">
+                            <input class="form__input" type="text" id="form-name">
                             <svg class="form__cross" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.77854 8.87495L2.29437 10.6718L10.0194 1.31922" stroke="#F61067" stroke-width="3"/>
                                 <path d="M3.77854 3.28081L2.29437 1.48396L10.0194 10.8365" stroke="#F61067" stroke-width="3"/>
@@ -199,10 +199,10 @@
                                 </svg>
                                 <span class="form__mess-text">Введіть мінімум 3 символи</span>
                             </div>
-                        </label>
-                        <label class="form__item">
+                        </div>
+                        <div class="form__item number-js">
                             <span class="form__item-name">Телефон</span>
-                            <input class="form__input" type="tel" pla>
+                            <input class="form__input" type="tel" id="form-number">
                             <svg class="form__cross" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.77854 8.87495L2.29437 10.6718L10.0194 1.31922" stroke="#F61067" stroke-width="3"/>
                                 <path d="M3.77854 3.28081L2.29437 1.48396L10.0194 10.8365" stroke="#F61067" stroke-width="3"/>
@@ -216,10 +216,10 @@
                                 </svg>
                                 <span class="form__mess-text">Введіть мінімум 3 символи</span>
                             </div>
-                        </label>
-                        <label class="form__item">
+                        </div>
+                        <div class="form__item email-js">
                             <span class="form__item-name">Email *</span>
-                            <input class="form__input" type="text">
+                            <input class="form__input" type="email" id="form-email">
                             <svg class="form__cross" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.77854 8.87495L2.29437 10.6718L10.0194 1.31922" stroke="#F61067" stroke-width="3"/>
                                 <path d="M3.77854 3.28081L2.29437 1.48396L10.0194 10.8365" stroke="#F61067" stroke-width="3"/>
@@ -233,8 +233,8 @@
                                 </svg>
                                 <span class="form__mess-text">Введіть мінімум 3 символи</span>
                             </div>
-                        </label>
-                        <div class="form__item">
+                        </div>
+                        <div class="form__item select-js">
                             <div class="dropdown-js">
                                 <div class="dropdown-js__current" data-value="unset">
                                     <span>Оберіть пункт</span>
@@ -251,6 +251,12 @@
                                     <a class="dropdown-js__link" href="#" data-value="Пунк 3">Пунк 3</a>
                                     <a class="dropdown-js__link" href="#" data-value="Пунк 4">Пунк 4</a>
                                 </div>
+                            </div>
+                            <div class="form__mess">
+                                <svg class="form__mess-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11C2.464 11 0 8.536 0 5.5C0 2.464 2.464 0 5.5 0C8.536 0 11 2.464 11 5.5C11 8.536 8.536 11 5.5 11ZM5.5 2.75C5.1975 2.75 4.95 2.9975 4.95 3.3V5.5C4.95 5.8025 5.1975 6.05 5.5 6.05C5.8025 6.05 6.05 5.8025 6.05 5.5V3.3C6.05 2.9975 5.8025 2.75 5.5 2.75ZM4.95 8.25V7.15H6.05V8.25H4.95Z" fill="#F61067"/>
+                                </svg>
+                                <span class="form__mess-text">Виберіть хоча б 1 пункт</span>
                             </div>
                         </div>
                         <div class="form__item">
@@ -303,6 +309,10 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form__item">
+                            <textarea class="form__comment" cols="30" rows="9" placeholder="Коментар"></textarea>
+                        </div>
+                        <button class="btn form__btn">Відправити дані</button>
                     </form>
                 </div>
             </div>
@@ -329,12 +339,9 @@
 </footer>
 
 
-
-
-
-<script src="js/jquery.js"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="js/app.min.js"></script>
+<script src="js/validate.js"></script>
 
 </body>
 </html>
