@@ -72,20 +72,20 @@ const swiperBg = new Swiper('.intro__bg', {
 
 swiperItr.controller.control = swiperBg
 
-//Smooth scroll
+//Smooth scroll / Header link
 
-const btnScroll = document.querySelectorAll('.header__link');
+const headerLinks = document.querySelectorAll('.header__link');
 
-btnScroll.forEach(function (item) {
-	let currentItem = item
-	let itemAttr = currentItem.getAttribute("data-scroll")
-	let currentSection = document.querySelector(itemAttr)
+headerLinks.forEach(function (item) {
+	const currentItem = item
+	const itemAttr = currentItem.getAttribute("data-scroll")
+	const currentSection = document.querySelector(itemAttr)
 
 	window.addEventListener('scroll',function (){
-		currentItem.classList.remove('active')
+		item.classList.remove('active')
 
 		if(window.scrollY >= currentSection.offsetTop - 70){
-			btnScroll.forEach(function (item){
+			headerLinks.forEach(function (item){
 				item.classList.remove('active')
 			})
 			currentItem.classList.add('active')
@@ -97,8 +97,7 @@ btnScroll.forEach(function (item) {
 	item.addEventListener('click',function (e){
 		e.preventDefault()
 
-
-		btnScroll.forEach(function (item){
+		headerLinks.forEach(function (item){
 			item.classList.remove('active')
 		})
 
@@ -114,3 +113,25 @@ function scrollTo(element) {
 		behavior: 'smooth'
 	})
 }
+
+// Footer link
+const footerLinks = document.querySelectorAll('.footer__link');
+
+footerLinks.forEach(function (item) {
+
+	item.addEventListener('click',function (e){
+		e.preventDefault()
+		const currentItemFt = item
+		const itemAttrFt = currentItemFt.getAttribute("data-scroll")
+		const currentSectionFt = document.querySelector(itemAttrFt)
+
+		footerLinks.forEach(function (item){
+			item.classList.remove('active')
+		})
+
+		currentItemFt.classList.add('active')
+		scrollTo(currentSectionFt)
+	})
+})
+
+
