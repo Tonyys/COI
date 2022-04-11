@@ -52,15 +52,18 @@
       height: 10px
       position: absolute
       top: calc(50% - 5px)
+      transition-duration: .5s
     &:hover
       .intro__prev-arrow
         transform: scalex(2)
         right: 5%
+      .intro__next-arrow
+        transform: scalex(2)
+        left: 5%
   &__prev
     left: 0
     &-arrow
       right: 20%
-      transition-duration: .5s
   &__next
     right: 0
     &-arrow
