@@ -1,0 +1,25 @@
+.dropdown-js
+  position: relative
+
+  &__list
+    opacity: 0
+    visibility: hidden
+    z-index: 10
+    transition: .35s
+    display: flex
+    flex-direction: column
+    min-width: 100%
+    position: absolute
+    top: calc(100% + 8px)
+  &__arrow
+    transition: .35s
+
+  &.open
+    .dropdown-js__list
+      opacity: 1
+      visibility: visible
+
+    .dropdown-js__arrow
+      transform: rotate(180deg)
+
+
