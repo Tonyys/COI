@@ -202,7 +202,7 @@
                         </div>
                         <div class="form__item number-js">
                             <span class="form__item-name">Телефон</span>
-                            <input class="form__input" type="tel" id="form-number">
+                            <input class="form__input" type="tel" id="form-number" placeholder="+38 (000)___-__-__">
                             <svg class="form__cross" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.77854 8.87495L2.29437 10.6718L10.0194 1.31922" stroke="#F61067" stroke-width="3"/>
                                 <path d="M3.77854 3.28081L2.29437 1.48396L10.0194 10.8365" stroke="#F61067" stroke-width="3"/>
@@ -214,7 +214,7 @@
                                 <svg class="form__mess-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11C2.464 11 0 8.536 0 5.5C0 2.464 2.464 0 5.5 0C8.536 0 11 2.464 11 5.5C11 8.536 8.536 11 5.5 11ZM5.5 2.75C5.1975 2.75 4.95 2.9975 4.95 3.3V5.5C4.95 5.8025 5.1975 6.05 5.5 6.05C5.8025 6.05 6.05 5.8025 6.05 5.5V3.3C6.05 2.9975 5.8025 2.75 5.5 2.75ZM4.95 8.25V7.15H6.05V8.25H4.95Z" fill="#F61067"/>
                                 </svg>
-                                <span class="form__mess-text">Введіть мінімум 3 символи</span>
+                                <span class="form__mess-text">Введіть коректно номер телефону</span>
                             </div>
                         </div>
                         <div class="form__item email-js">
@@ -231,7 +231,7 @@
                                 <svg class="form__mess-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11C2.464 11 0 8.536 0 5.5C0 2.464 2.464 0 5.5 0C8.536 0 11 2.464 11 5.5C11 8.536 8.536 11 5.5 11ZM5.5 2.75C5.1975 2.75 4.95 2.9975 4.95 3.3V5.5C4.95 5.8025 5.1975 6.05 5.5 6.05C5.8025 6.05 6.05 5.8025 6.05 5.5V3.3C6.05 2.9975 5.8025 2.75 5.5 2.75ZM4.95 8.25V7.15H6.05V8.25H4.95Z" fill="#F61067"/>
                                 </svg>
-                                <span class="form__mess-text">Введіть мінімум 3 символи</span>
+                                <span class="form__mess-text">Введіть коректно Email адресу</span>
                             </div>
                         </div>
                         <div class="form__item select-js">
@@ -256,7 +256,7 @@
                                 <svg class="form__mess-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11C2.464 11 0 8.536 0 5.5C0 2.464 2.464 0 5.5 0C8.536 0 11 2.464 11 5.5C11 8.536 8.536 11 5.5 11ZM5.5 2.75C5.1975 2.75 4.95 2.9975 4.95 3.3V5.5C4.95 5.8025 5.1975 6.05 5.5 6.05C5.8025 6.05 6.05 5.8025 6.05 5.5V3.3C6.05 2.9975 5.8025 2.75 5.5 2.75ZM4.95 8.25V7.15H6.05V8.25H4.95Z" fill="#F61067"/>
                                 </svg>
-                                <span class="form__mess-text">Виберіть хоча б 1 пункт</span>
+                                <span class="form__mess-text">Оберіть хоча б 1 пункт</span>
                             </div>
                         </div>
                         <div class="form__item">
@@ -313,6 +313,7 @@
                             <textarea class="form__comment" cols="30" rows="9" placeholder="Коментар"></textarea>
                         </div>
                         <button class="btn form__btn">Відправити дані</button>
+                        <div class="form__success"></div>
                     </form>
                 </div>
             </div>
@@ -338,8 +339,29 @@
     </div>
 </footer>
 
+<div class="pop-up">
+    <div class="pop-up__inner">
+        <div class="pop-up__exit">
+            <svg class="pop-up__cross" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 2.18637L12.59 0.776367L7 6.36637L1.41 0.776367L0 2.18637L5.59 7.77637L0 13.3664L1.41 14.7764L7 9.18637L12.59 14.7764L14 13.3664L8.41 7.77637L14 2.18637Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="pop-up__done">
+            <svg class="pop-up__icon" width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="25" cy="25.4192" rx="25" ry="24.6429" fill="#F61067"/>
+                <rect width="2.12761" height="14.184" transform="matrix(0.712175 -0.702002 0.712175 0.702002 11.428 23.8495)" fill="white"/>
+                <rect width="2.12761" height="23.5751" transform="matrix(0.712175 0.702002 -0.712175 0.702002 37.3153 16.2665)" fill="white"/>
+            </svg>
+        </div>
+        <p class="pop-up__title">Ваше повідомлення відправлено успшно!</p>
+        <p class="pop-up__subtitle">Дякуємо! Ваше повідомлення відправлено успішно. Очікуйте на відповідь!</p>
+    </div>
+</div>
+
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
+
 <script src="js/app.min.js"></script>
 <script src="js/validate.js"></script>
 

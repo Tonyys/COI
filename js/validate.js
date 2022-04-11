@@ -1,3 +1,4 @@
+const body = document.querySelector('body')
 //Name
 let formInp = document.getElementById('form-name')
 let errName = document.querySelector('.name-js')
@@ -8,20 +9,19 @@ let errNumber = document.querySelector('.number-js')
 let inpEmail = document.getElementById('form-email')
 let errEmail = document.querySelector('.email-js')
 //Select
-let select = document.querySelector('.dropdown-js__current')
-let selectAttr = select.getAttribute('data-value')
 let errSelect = document.querySelector('.select-js')
 
-
-let send = document.querySelector('.form__success')
+let popOpen = document.querySelector('.pop-up')
 
 var regNumber = /^[\d ()+-]+$/
 
-var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var regEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 let count = 0
 
 document.querySelector('.form__btn').addEventListener('click' , function(e){
+	let select = document.querySelector('.dropdown-js__current')
+	let selectAttr = select.getAttribute('data-value')
 	e.preventDefault()
 
 	if (formInp.value.length < 3) {
@@ -31,16 +31,14 @@ document.querySelector('.form__btn').addEventListener('click' , function(e){
 		valid(errName)
 		count++
 	}
-
-	if (!isPhone(regNumber)&& inpNumber.value.length <= 3) {
+	if (!isPhone(regNumber,inpNumber)&& inpNumber.value.length <= 17) {
 		notValid(errNumber)
 		count--
 	} else {
 		valid(errNumber)
 		count++
 	}
-
-	if(!isEmail(regEmail)&& inpEmail.value.length <=3) {
+	if(!isEmail (regEmail, inpEmail.value) || inpEmail.value.length <= 3) {
 		notValid(errEmail)
 		count--
 	} else {
@@ -48,38 +46,28 @@ document.querySelector('.form__btn').addEventListener('click' , function(e){
 		count++
 	}
 
-	if(selectAttr === 'unset') {
+	if(selectAttr === 'unset'){
 		notValid(errSelect)
 		count--
-	}
-
-	if (selectAttr != 'unset') {
+	} else {
 		valid(errSelect)
 		count++
 	}
 
-	if(count < 3) {
-		send.innerHTML = 'You form invalid'
-		send.style.color = 'red'
+	if(count < 4) {
 		count = 0
 	}
 
-	if(count == 3) {
-		inpName.value = ''
-		inpNumber.value = ''
-		inpEmail.value = ''
-		send.innerHTML = 'Your form send!'
-		send.style.color = 'green'
+	if(count == 4) {
+		popOpen.classList.add('active')
+		body.classList.add('active')
 		count = 0
 	}
-	console.log(count)
 })
-
 
 function isPhone (regex, inp) {
 	return regex.test(inp)
 }
-
 function isEmail (regex, inp) {
 	return regex.test(inp)
 }
@@ -94,5 +82,16 @@ function valid (inp) {
 	inp.classList.add('is-valid')
 }
 
+document.querySelector('.pop-up__exit').addEventListener('click',function (){
+	popOpen.classList.remove('active')
+	body.classList.remove('active')
+})
 
+//Number Mask
+
+var element = document.getElementById('form-number');
+var maskOptions = {
+	mask: '+{38} (000)000-00-00'
+};
+var mask = IMask(element, maskOptions);
 
