@@ -1,6 +1,10 @@
 .problems
   padding: 150px 0
   overflow: hidden
+  @media (max-width: 1024px)
+    padding: 100px 0
+  @media (max-width: 600px)
+    padding: 50px 0
   &__inner
     display: flex
     flex-direction: column
@@ -8,11 +12,19 @@
     margin-bottom: 52px
     display: flex
     flex-direction: column
+    @media (max-width: 911px)
+      margin-bottom: 15px
+    @media (max-width: 600px)
+      margin-bottom: 0
   &__suptitle
     margin-bottom: 15px
     color: $black
     font-size: 24px
     font-weight: 600
+    @media (max-width: 1024px)
+      font-size: 22px
+    @media (max-width: 600px)
+      font-size: 10px
   &__title
     max-width: 1050px
     width: 100%
@@ -21,6 +33,15 @@
     font-weight: 700
     line-height: 157%
     color: $blue-dark
+    @media (max-width: 1024px)
+      font-size: 40px
+      max-width: 720px
+    @media (max-width: 911px)
+      font-size: 34px
+    @media (max-width: 768px)
+      font-size: 28px
+    @media (max-width: 600px)
+      font-size: 16px
     &-color
       color: $pink-light
       font: inherit
@@ -29,22 +50,48 @@
     flex-direction: column
   &__item
     display: flex
+    align-items: center
+    @media (max-width: 911px)
+      flex-direction: column
     &:not(:last-child)
       margin-bottom: 126px
+      @media (max-width: 911px)
+        margin-bottom: 30px
     &:nth-child(even)
       flex-direction: row-reverse
+      @media (max-width: 911px)
+        flex-direction: column
       .problems__right
         flex-direction: row-reverse
         .problems__bg
           right: 264px
           left: auto
+          @media (max-width: 1024px)
+            right: 134px
+        .problems__note
+          left: 40px
+          @media (max-width: 1024px)
+            left: 85px
+          @media (max-width: 768px)
+            left: 50px
+          @media (max-width: 600px)
+            left: 0
+            right: auto
       .problems__left
         margin-left: 55px
         margin-right: 0
+        @media (max-width: 911px)
+          margin-left: 0
   &__left
+    margin-bottom: 150px
     margin-right: 55px
     display: flex
     flex-direction: column
+    @media (max-width: 911px)
+      margin-right: 0
+      margin-bottom: 95px
+    @media (max-width: 600px)
+      margin-bottom: 40px
   &__number
     margin-bottom: 30px
     font-family: Georgia
@@ -52,12 +99,28 @@
     font-weight: 400
     line-height: 100%
     color: $pink-light
+    @media (max-width: 1024px)
+      font-size: 130px
+    @media (max-width: 768px)
+      font-size: 100px
+      margin-bottom: 10px
+    @media (max-width: 600px)
+      font-size: 70px
   &__text
     max-width: 420px
+    width: 100%
     font-size: 20px
     color: $black
     font-weight: 500
     line-height: 150%
+    @media (max-width: 1024px)
+      font-size: 16px
+    @media (max-width: 911px)
+      max-width: 550px
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      font-size: 10px
   &__right
     display: flex
     position: relative
@@ -65,6 +128,8 @@
     max-width: 430px
     width: 100%
     height: 100%
+    @media (max-width: 1024px)
+      max-width: 350px
   &__img
     width: 100%
     height: 100%
@@ -74,9 +139,14 @@
     height: 540px
     background-color: $purple-dark
     position: absolute
-    left: 264px
+    left: 234px
     top: -36px
     z-index: -2
+    @media (max-width: 1024px)
+      height: 400px
+      left: 166px
+    @media (max-width: 911px)
+      display: none
   &__note
     display: flex
     flex-direction: column
@@ -85,9 +155,22 @@
     max-width: 255px
     max-height: 504px
     position: relative
-    left: -40px
+    left: -130px
     background-color: $purple-dark
     z-index: 2
+    @media (max-width: 1024px)
+      max-height: 362px
+      left: -75px
+    @media (max-width: 911px)
+      top: -40px
+    @media (max-width: 768px)
+      left: -55px
+    @media (max-width: 600px)
+      max-height: 150px
+      position: absolute
+      right: 0
+      top: 0
+      left: auto
   &__advice
     display: inline-block
     font-size: 30px
@@ -96,6 +179,11 @@
     line-height: 1.7
     color: $white
     position: relative
+    @media (max-width: 1024px)
+      padding: 0 15px
+      font-size: 24px
+    @media (max-width: 600px)
+      font-size: 14px
     &:before
       content: '“'
       font-family: Noticia Text
@@ -107,6 +195,11 @@
       left: calc(50% - 35px)
       right: 50%
       bottom: 86px
+      @media (max-width: 1024px)
+        font-size: 110px
+        bottom: 46px
+      @media (max-width: 600px)
+        display: none
     &:after
       content: '”'
       font-family: Noticia Text
@@ -117,3 +210,8 @@
       position: absolute
       left: calc(50% - 35px)
       top: 126px
+      @media (max-width: 1024px)
+        font-size: 110px
+        top: 86px
+      @media (max-width: 600px)
+        display: none

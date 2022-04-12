@@ -1,7 +1,16 @@
 .help
   padding: 175px 0 121px 0
+  @media (max-width: 1024px)
+    padding: 100px 0
+  @media (max-width: 768px)
+    padding: 70px 0
+  @media (max-width: 600px)
+    padding: 50px 0
   &__inner
     display: flex
+    align-items: center
+    @media (max-width: 911px)
+      flex-direction: column-reverse
   &__left
     margin-right: 76px
     max-width: 601px
@@ -9,6 +18,9 @@
     max-height: 866px
     position: relative
     z-index: 1
+    @media (max-width: 911px)
+      margin-right: 0
+      margin-top: 100px
     &:after
       content: ''
       max-width: 352px
@@ -19,6 +31,9 @@
       left: -50px
       top: -50px
       z-index: -1
+      @media (max-width: 911px)
+        left: -35px
+        top: -35px
   &__photo
     width: 100%
     height: 100%
@@ -26,21 +41,37 @@
   &__right
     display: flex
     flex-direction: column
+    @media (max-width: 911px)
+      width: 100%
+      align-items: center
   &__top
     margin-bottom: 30px
     display: flex
     flex-direction: column
+    @media (max-width: 911px)
+      padding: 0 20px
+      width: 100%
+    @media (max-width: 600px)
+      padding: 0
   &__suptitle
     margin-bottom: 15px
     font-size: 24px
     font-weight: 600
     color: $black
+    @media (max-width: 768px)
+      font-size: 18px
+    @media (max-width: 600px)
+      font-size: 10px
   &__title
     font-family: Georgia
     font-size: 50px
     font-weight: 700
     line-height: 1.5
     color: $blue-dark
+    @media (max-width: 768px)
+      font-size: 28px
+    @media (max-width: 600px)
+      font-size: 18px
   &__title-color
     font: inherit
     color: $pink-light

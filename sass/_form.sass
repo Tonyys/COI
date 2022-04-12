@@ -1,6 +1,7 @@
 .form
   max-width: 444px
   width: 100%
+
   &__item
     margin-bottom: 11px
     display: flex
@@ -22,12 +23,14 @@
     top: -8px
   &__input
     padding: 15px 30px 15px 35px
-    height: 50px
     font-size: 16px
     font-weight: 400
     color: $black
     border: 1px solid #000000
     border-radius: 4px
+    @media (max-width: 768px)
+      padding: 8px 30px 8px 20px
+      font-size: 14px
   &__cross
     display: none
     width: 14px
@@ -35,6 +38,8 @@
     position: absolute
     top: 19px
     right: 15px
+    @media (max-width: 768px)
+      top: 10px
   &__done
     display: none
     width: 14px
@@ -42,6 +47,8 @@
     position: absolute
     top: 19px
     right: 15px
+    @media (max-width: 768px)
+      top: 10px
   &__mess
     margin-top: 5px
     display: none
@@ -54,6 +61,8 @@
     font-size: 14px
     font-weight: 400
     color: $pink-light
+    @media (max-width: 600px)
+      font-size: 10px
   &__comment
     margin-bottom: 40px
     padding: 17px 30px
@@ -64,9 +73,13 @@
     color: $black
     outline: none
     resize: none
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      margin-bottom: 0
+      padding: 8px 20px
     &::placeholder
       color: $black
-
   //    JS VALIDATE
 
   .name-js.is-invalid

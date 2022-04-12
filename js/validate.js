@@ -87,6 +87,11 @@ document.querySelector('.pop-up__exit').addEventListener('click',function (){
 	body.classList.remove('active')
 })
 
+document.querySelector('.pop-up__bg-exit').addEventListener('click',function (){
+	popOpen.classList.remove('active')
+	body.classList.remove('active')
+})
+
 //Number Mask
 
 var element = document.getElementById('form-number');

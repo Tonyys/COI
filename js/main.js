@@ -125,13 +125,42 @@ footerLinks.forEach(function (item) {
 		const itemAttrFt = currentItemFt.getAttribute("data-scroll")
 		const currentSectionFt = document.querySelector(itemAttrFt)
 
-		footerLinks.forEach(function (item){
-			item.classList.remove('active')
-		})
-
-		currentItemFt.classList.add('active')
 		scrollTo(currentSectionFt)
 	})
 })
 
 
+// burger
+const burger = document.querySelector('.header__burger')
+const mobileMenu = document.querySelector('.mobile')
+
+burger.addEventListener('click',function (){
+	mobileMenu.classList.toggle('active')
+	burger.classList.toggle('active')
+})
+
+//Mobile link Active
+
+const mobileLinks = document.querySelectorAll('.mobile__link');
+
+mobileLinks.forEach(function (item) {
+
+	item.addEventListener('click',function (e){
+		e.preventDefault()
+		const currentItemMb = item
+		const itemAttrMb = currentItemMb.getAttribute("data-scroll")
+		const currentSectionMb = document.querySelector(itemAttrMb)
+
+		if(item.classList.contains('close-menu-js')) {
+			burger.classList.remove('active')
+			mobileMenu.classList.remove('active')
+		}
+
+		mobileLinks.forEach(function (item){
+			item.classList.remove('active')
+		})
+
+		currentItemMb.classList.add('active')
+		scrollTo(currentSectionMb)
+	})
+})

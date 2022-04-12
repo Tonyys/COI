@@ -1,7 +1,8 @@
 .intro
   width: 100%
   height: 100vh
-
+  @media (max-width: 600px)
+    padding-top: 30px
   &__inner
     height: 100vh
     position: relative
@@ -19,15 +20,31 @@
   &__swiper
     margin: auto 0
     max-width: 816px
+    height: auto
     overflow: visible
     z-index: 1
-  &__slide
-    min-height: 495px
+    @media (max-width: 1024px)
+      max-width: 420px
+    @media (max-width: 768px)
+      max-width: 345px
+    @media (max-width: 600px)
+      max-width: 180px
   &__title
+    max-width: 816px
+    width: 100%
     margin-bottom: 51px
     font-family: Georgia
     font-size: 100px
     font-weight: 700
+    @media (max-width: 1024px)
+      font-size: 50px
+      max-width: 530px
+    @media (max-width: 768px)
+      font-size: 42px
+      margin-bottom: 30px
+    @media (max-width: 600px)
+      font-size: 22px
+      margin-bottom: 20px
   &__text
     color: $pink-light
     font: inherit
@@ -39,6 +56,14 @@
     font-weight: 400
     color: $white
     line-height: 157%
+    @media (max-width: 1024px)
+      font-size: 16px
+    @media (max-width: 768px)
+      font-size: 14px
+      margin-bottom: 40px
+    @media (max-width: 600px)
+      font-size: 10px
+      margin-bottom: 30px
   &__prev,
   &__next
     width: 48px
@@ -47,19 +72,40 @@
     z-index: 10
     border: 1px solid #ffffff
     border-radius: 50%
+    @media (max-width: 768px)
+      width: 30px
+      height: 30px
+    @media (max-width: 600px)
+      width: 20px
+      height: 20px
     &-arrow
       width: 20px
       height: 10px
       position: absolute
       top: calc(50% - 5px)
       transition-duration: .5s
+      @media (max-width: 768px)
+        width: 14px
+        height: 7px
+        top: calc(50% - 3px)
+      @media (max-width: 600px)
+        width: 10px
+        height: 5px
+        top: calc(50% - 2px)
     &:hover
+
       .intro__prev-arrow
         transform: scalex(2)
         right: 5%
+        @media (max-width: 1024px)
+          right: 20%
+          transform: scalex(1)
       .intro__next-arrow
         transform: scalex(2)
         left: 5%
+        @media (max-width: 1024px)
+          left: 20%
+          transform: scalex(1)
   &__prev
     left: 0
     &-arrow
@@ -73,7 +119,20 @@
   .swiper-pagination-bullet
     width: 14px
     height: 14px
-    margin-right: 25px !important
+    background: $white
+    opacity: 1
+    &:not(:last-child)
+      margin-right: 25px !important
+      @media (max-width: 1024px)
+        margin-right: 20px !important
+      @media (max-width: 600px)
+        margin-right: 10px
+    @media (max-width: 1024px)
+      width: 10px
+      height: 10px
+    @media (max-width: 600px)
+      width: 7px
+      height: 7px
   .swiper-pagination-bullet-active
     background-color: $pink-light
     transition-duration: .4s

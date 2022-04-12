@@ -6,6 +6,10 @@
   right: 0
   z-index: 100
   transition-duration: .4s
+  @media (max-width: 600px)
+    background-color: #fff
+    -webkit-box-shadow: 0px 14px 50px -15px rgba(0,0,0,0.55)
+    box-shadow: 0px 14px 50px -15px rgba(0,0,0,0.55)
   &.active
     background-color: #ffffff
     -webkit-box-shadow: 0px 14px 50px -15px rgba(0,0,0,0.55)
@@ -19,24 +23,36 @@
       color: $black
       &:after
         background-color: $pink-light
+    .header__burger-item
+      background-color: #000000
   &__inner
     display: flex
     justify-content: space-between
+    align-items: center
+    position: relative
   &__logo
     margin-right: 40px
     max-width: 62px
     width: 100%
+    @media (max-width: 600px)
+      max-width: 45px
   &__img
     width: 100%
     height: 100%
     path
       transition-duration: .4s
+      @media (max-width: 600px)
+        fill: #000000
     rect
       transition-duration: .4s
+      @media (max-width: 600px)
+        fill: #000000
   &__nav
     margin: 0 auto
     display: flex
     align-items: center
+    @media (max-width: 1024px)
+      display: none
   &__link
     font-size: 20px
     font-weight: 500
@@ -61,3 +77,123 @@
         transform: scaleX(1)
     &.active
       color: $pink-light !important
+  &__burger
+    margin-top: 4px
+    display: none
+    flex-direction: column
+    width: 25px
+    height: 14px
+    cursor: pointer
+    position: relative
+    @media (max-width: 1024px)
+      display: flex
+    @media (max-width: 1024px)
+      margin-top: 0
+    &.active
+      .header__burger-item
+        &:nth-child(1)
+          width: 17px
+          transform: rotate(45deg)
+        &:nth-child(2)
+          transform: scaleX(0)
+        &:nth-child(3)
+          width: 17px
+        transform: rotate(-45deg)
+  &__burger-item
+    display: inline-block
+    width: 100%
+    height: 2px
+    background-color: #ffffff
+    transition-duration: .4s
+    transform-origin: left
+    position: absolute
+    left: 0
+    @media (max-width: 600px)
+      background-color: #000000
+    &:nth-child(1)
+      top: 0
+    &:nth-child(2)
+      top: calc(50% - 1px)
+    &:nth-child(3)
+      bottom: 0
+  .mobile
+    padding: 15px 20px 20px 70px
+    display: block
+    background-color: rgba(250,250,250,.95)
+    position: absolute
+    right: 60px
+    top: 70px
+    opacity: 0
+    pointer-events: none
+    transition: .5s linear all
+    @media (max-width: 600px)
+      padding: 15px 20px 15px 70px
+      width: 100%
+      height: 100vh
+      right: 0
+      top: 64px
+      background-color: #fff
+    &.active
+      opacity: 1
+      pointer-events: visible
+      .mobile__link
+        transform: translateX(0)
+      .mobile__logo
+        opacity: 1
+    &__inner
+      display: flex
+      flex-direction: column
+      align-items: end
+    &__logo
+      margin-bottom: 20px
+      max-width: 63px
+      width: 100%
+      opacity: 0
+      transition-duration: .5s
+      @media (max-width: 600px)
+        display: none
+    &__logo .header__img
+      path
+        fill: #000000
+      rect
+        fill: #000000
+    &__nav
+      display: flex
+      flex-direction: column
+      align-items: end
+    &__link
+      display: none
+      margin-right: 0
+      font-size: 20px
+      font-weight: 500
+      position: relative
+      transition-duration: .4s
+      color: $black
+      transition: .5s cubic-bezier(.25,.8,.36,.89) .1s
+      transform: translateX(200px)
+      &:after
+        content: ''
+        width: 100%
+        height: 3px
+        background-color: $pink-light
+        position: absolute
+        left: 0
+        bottom: -5px
+        transform: scaleX(0)
+        transition-duration: .4s
+        transform-origin: left
+      &:hover
+        &:after
+          transform: scaleX(1)
+      &:not(:last-child)
+        margin-bottom: 35px
+      &:nth-child(2)
+        transition: .5s cubic-bezier(.25,.8,.36,.89) .2s
+      &:nth-child(3)
+        transition: .5s cubic-bezier(.25,.8,.36,.89) .3s
+      &:nth-child(4)
+        transition: .5s cubic-bezier(.25,.8,.36,.89) .4s
+      @media (max-width: 1024px)
+        display: block
+      &.active
+        color: $pink-light !important

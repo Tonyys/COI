@@ -10,10 +10,15 @@
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
+  @media (max-width: 600px)
+    padding-left: 15px
+    margin-bottom: 10px
   &__name
     font-size: 14px
     font-weight: 400
     color: $black
+    @media (max-width: 600px)
+      font-size: 10px
   &
     input
       position: absolute
@@ -32,8 +37,14 @@
     top: 0
     left: 0
     background-color: #eee
+    @media (max-width: 600px)
+      width: 12px
+      height: 12px
     svg
       display: none
+      @media (max-width: 600px)
+        width: 8px
+        height: 8px
   &:hover input ~ .checkmark
     background-color: #ccc
   & input:checked ~ .checkmark
@@ -50,4 +61,5 @@
     -webkit-transform: rotate(45deg)
     -ms-transform: rotate(45deg)
     transform: rotate(45deg)
+
 
