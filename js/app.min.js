@@ -53,6 +53,10 @@ const swiperItr = new Swiper('.intro__swiper', {
 	},
 	spaceBetween: 100,
 	speed: 1500,
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true
+	},
 
 	pagination: {
 		el: '.swiper-pagination',
