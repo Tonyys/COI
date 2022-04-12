@@ -29,7 +29,16 @@
       max-width: 345px
     @media (max-width: 600px)
       max-width: 180px
+  .swiper-slide-active
+      .intro__title
+        opacity: 1
+      .intro__subtitle
+        opacity: 1
+      .intro__btn
+        opacity: 1
   &__title
+    opacity: 0
+    transition: .5s cubic-bezier(.6,.12,.66,.94) .6s
     max-width: 816px
     width: 100%
     margin-bottom: 51px
@@ -49,6 +58,8 @@
     color: $pink-light
     font: inherit
   &__subtitle
+    opacity: 0
+    transition: .5s cubic-bezier(.6,.12,.66,.94) .8s
     margin-bottom: 68px
     max-width: 420px
     width: 100%
@@ -64,6 +75,9 @@
     @media (max-width: 600px)
       font-size: 10px
       margin-bottom: 30px
+  &__btn
+    opacity: 0
+    transition: .5s cubic-bezier(.6,.12,.66,.94) .9s
   &__prev,
   &__next
     width: 48px
@@ -78,42 +92,52 @@
     @media (max-width: 600px)
       width: 20px
       height: 20px
-    &-arrow
-      width: 20px
-      height: 10px
-      position: absolute
-      top: calc(50% - 5px)
-      transition-duration: .5s
-      @media (max-width: 768px)
-        width: 14px
-        height: 7px
-        top: calc(50% - 3px)
-      @media (max-width: 600px)
-        width: 10px
-        height: 5px
-        top: calc(50% - 2px)
     &:hover
-
-      .intro__prev-arrow
-        transform: scalex(2)
-        right: 5%
+      .intro__arrow-body
+        width: 40px
+        right: calc(50% - 7px)
         @media (max-width: 1024px)
-          right: 20%
-          transform: scalex(1)
-      .intro__next-arrow
-        transform: scalex(2)
-        left: 5%
-        @media (max-width: 1024px)
-          left: 20%
-          transform: scalex(1)
+          width: 14px
+          top: 50%
+          right: calc(50% - 7px)
+        @media (max-width: 768px)
+          width: 10px
+          right: calc(50% - 5px)
+        @media (max-width: 600px)
+          width: 7px
+          right: calc(50% - 3px)
   &__prev
     left: 0
-    &-arrow
-      right: 20%
+    transform: rotate(180deg)
   &__next
     right: 0
-    &-arrow
-      left: 20%
+  &__arrow
+    border: solid white
+    border-width: 0 1px 1px 0
+    display: inline-block
+    padding: 3px
+    position: absolute
+    top: calc(50% - 3px)
+    left: 50%
+    @media (max-width: 768px)
+      padding: 2px
+      top: calc(50% - 2px)
+    @media (max-width: 600px)
+      left: calc(50% - 2px)
+  &__arrow-body
+    width: 14px
+    height: 1px
+    background-color: #fff
+    position: absolute
+    top: 50%
+    right: calc(50% - 7px)
+    transition-duration: .4s
+    @media (max-width: 768px)
+      width: 10px
+      right: calc(50% - 5px)
+    @media (max-width: 600px)
+      width: 7px
+      right: calc(50% - 3px)
   &__pagination
     margin-bottom: 73px
   .swiper-pagination-bullet
@@ -138,3 +162,7 @@
     transition-duration: .4s
     &:hover
       background-color: $pink
+    //arrow-right
+  .right
+    transform: rotate(-45deg)
+    -webkit-transform: rotate(-45deg)

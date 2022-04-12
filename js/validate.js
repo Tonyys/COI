@@ -1,4 +1,5 @@
-const body = document.querySelector('body')
+const bodyElem = document.querySelector('body')
+
 //Name
 let formInp = document.getElementById('form-name')
 let errName = document.querySelector('.name-js')
@@ -58,9 +59,9 @@ document.querySelector('.form__btn').addEventListener('click' , function(e){
 		count = 0
 	}
 
-	if(count == 4) {
+	if(count === 4) {
 		popOpen.classList.add('active')
-		body.classList.add('active')
+		bodyElem.classList.add('active')
 		count = 0
 	}
 })
@@ -84,12 +85,12 @@ function valid (inp) {
 
 document.querySelector('.pop-up__exit').addEventListener('click',function (){
 	popOpen.classList.remove('active')
-	body.classList.remove('active')
+	bodyElem.classList.remove('active')
 })
 
 document.querySelector('.pop-up__bg-exit').addEventListener('click',function (){
 	popOpen.classList.remove('active')
-	body.classList.remove('active')
+	bodyElem.classList.remove('active')
 })
 
 //Number Mask
