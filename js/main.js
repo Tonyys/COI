@@ -81,13 +81,13 @@ swiperItr.controller.control = swiperBg
 //Smooth scroll / Header link
 
 const headerLinks = document.querySelectorAll('.header__link');
+const linkSrcoll = document.querySelectorAll('.js-link-scroll')
 
-headerLinks.forEach(function (item) {
-	const currentItem = item
-	const itemAttr = currentItem.getAttribute("data-scroll")
-	const currentSection = document.querySelector(itemAttr)
-
-	window.addEventListener('scroll',function (){
+window.addEventListener('scroll',function (){
+	linkSrcoll.forEach(function (item){
+		let currentItem = item
+		let itemAttr = currentItem.getAttribute("data-scroll")
+		let currentSection = document.querySelector(itemAttr)
 		item.classList.remove('active')
 
 		if(window.scrollY >= currentSection.offsetTop - 70){
@@ -100,11 +100,22 @@ headerLinks.forEach(function (item) {
 		}
 	})
 
+})
+
+headerLinks.forEach(function (item) {
+	let currentItem = item
+	let itemAttr = currentItem.getAttribute("data-scroll")
+	let currentSection = document.querySelector(itemAttr)
+
 	item.addEventListener('click',function (e){
 		e.preventDefault()
 
 		headerLinks.forEach(function (item){
 			item.classList.remove('active')
+			if(item.classList.contains('js-close-menu')) {
+				burger.classList.remove('active')
+				mobileMenu.classList.remove('active')
+			}
 		})
 
 		currentItem.classList.add('active')
@@ -120,22 +131,6 @@ function scrollTo(element) {
 	})
 }
 
-// Footer link
-const footerLinks = document.querySelectorAll('.footer__link');
-
-footerLinks.forEach(function (item) {
-
-	item.addEventListener('click',function (e){
-		e.preventDefault()
-		const currentItemFt = item
-		const itemAttrFt = currentItemFt.getAttribute("data-scroll")
-		const currentSectionFt = document.querySelector(itemAttrFt)
-
-		scrollTo(currentSectionFt)
-	})
-})
-
-
 // burger
 const burger = document.querySelector('.header__burger')
 const mobileMenu = document.querySelector('.mobile')
@@ -145,28 +140,3 @@ burger.addEventListener('click',function (){
 	burger.classList.toggle('active')
 })
 
-//Mobile link Active
-
-const mobileLinks = document.querySelectorAll('.mobile__link');
-
-mobileLinks.forEach(function (item) {
-
-	item.addEventListener('click',function (e){
-		e.preventDefault()
-		const currentItemMb = item
-		const itemAttrMb = currentItemMb.getAttribute("data-scroll")
-		const currentSectionMb = document.querySelector(itemAttrMb)
-
-		if(item.classList.contains('close-menu-js')) {
-			burger.classList.remove('active')
-			mobileMenu.classList.remove('active')
-		}
-
-		mobileLinks.forEach(function (item){
-			item.classList.remove('active')
-		})
-
-		currentItemMb.classList.add('active')
-		scrollTo(currentSectionMb)
-	})
-})
