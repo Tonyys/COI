@@ -45,6 +45,7 @@ if(dropdowns) {
 	});
 
 }
+//SWIPER
 
 const swiperItr = new Swiper('.intro__swiper', {
 	loop: true,
@@ -71,6 +72,7 @@ const swiperItr = new Swiper('.intro__swiper', {
 
 const swiperBg = new Swiper('.intro__bg', {
 	loop: true,
+	parallax: true,
 	pagination: {
 		el: '.swiper-pagination',
 	},
